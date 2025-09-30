@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, List, ListItem } from "@mui/material";
+import { Box, Typography, List, ListItem, Grid } from "@mui/material";
 import { GitHub } from "@mui/icons-material";
 
 const GithubSlide: React.FC = () => (
@@ -23,37 +23,41 @@ const GithubSlide: React.FC = () => (
     </Typography>
 
     {/* 左右排列 List 和圖片 */}
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: { xs: "column", md: "row" }, // 手機版堆疊，桌面版左右
-        alignItems: "center",
-        gap: 4,
-        maxWidth: 1000,
-        mt: 4,
-      }}
-    >
-      <List sx={{ flex: 1 }}>
-        <ListItem>
-          <Typography variant="h5">
-            使用 GitHub Actions 自動部署 React 專案
-          </Typography>
-        </ListItem>
-        <ListItem>
-          <Typography variant="h5">支援自訂網域與 HTTPS 安全連線</Typography>
-        </ListItem>
-        <ListItem>
-          <Typography variant="h5">免費、穩定、維護方便</Typography>
-        </ListItem>
-      </List>
+    <Box sx={{ maxWidth: "100%", mt: 4, mx: "auto" }}>
+      <Grid container spacing={4} alignItems="center">
+        {/* 左側 List */}
+        <Grid item xs={12} md={6}>
+          <List>
+            <ListItem>
+              <Typography variant="h5">
+                使用 GitHub Actions 自動部署 React 專案
+              </Typography>
+            </ListItem>
+            <ListItem>
+              <Typography variant="h5">
+                支援自訂網域與 HTTPS 安全連線
+              </Typography>
+            </ListItem>
+            <ListItem>
+              <Typography variant="h5">免費、穩定、維護方便</Typography>
+            </ListItem>
+          </List>
+        </Grid>
 
-      {/* 右側圖片 */}
-      <Box
-        component="img"
-        src={process.env.PUBLIC_URL + "/github.jpg"}
-        alt="GitHub Illustration"
-        sx={{ width: { xs: "80%", md: "400px" }, borderRadius: 2 }}
-      />
+        {/* 右側圖片 */}
+        <Grid item xs={12} md={6}>
+          <Box
+            component="img"
+            src={process.env.PUBLIC_URL + "/github.jpg"}
+            alt="GitHub Illustration"
+            sx={{
+              width: "100%",
+              borderRadius: 2,
+              objectFit: "contain",
+            }}
+          />
+        </Grid>
+      </Grid>
     </Box>
 
     <Typography variant="h6" sx={{ mt: 6, color: "#8b949e" }}>

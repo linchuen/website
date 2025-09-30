@@ -17,6 +17,7 @@
     "@types/react": "^19.1.15",
     "@types/react-dom": "^19.1.9",
     "framer-motion": "^12.23.22",
+    "qrcode.react": "^4.2.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-scripts": "5.0.1",

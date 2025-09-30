@@ -1,5 +1,7 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Paper, Button } from "@mui/material";
+import { QRCodeCanvas } from "qrcode.react";
+import { motion } from "framer-motion";
 
 const HomeSlide: React.FC = () => (
   <Box
@@ -13,16 +15,77 @@ const HomeSlide: React.FC = () => (
       justifyContent: "center",
       alignItems: "center",
       px: 4,
+      textAlign: "center",
     }}
   >
-    <Typography variant="h1" fontWeight="bold" gutterBottom>
-      網站架設簡報
-    </Typography>
-    <Typography variant="h5" sx={{ maxWidth: 700, textAlign: "center" }}>
-      使用 React + MUI 製作的單頁簡報網站。
-      內容涵蓋自我介紹、工程師分類、網站架設流程、人月神話、Vibe Coding、GitHub Page。
-    </Typography>
+    <motion.div
+      initial={{ opacity: 0, y: -30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+    >
+      <Typography
+        variant="h1"
+        fontWeight="bold"
+        gutterBottom
+        sx={{ textShadow: "2px 2px 6px rgba(0,0,0,0.4)" }}
+      >
+        網站架設介紹
+      </Typography>
+    </motion.div>
+
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 0.3 }}
+    >
+      <Typography
+        variant="h6"
+        sx={{
+          maxWidth: 700,
+          mb: 6,
+          textShadow: "1px 1px 4px rgba(0,0,0,0.3)",
+        }}
+      >
+        內容涵蓋軟體工程師分類、網站架設流程、如何在 GitHub 設置個人網頁。
+      </Typography>
+    </motion.div>
+
+    <motion.div
+      initial={{ scale: 0.8, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 0.8, delay: 0.6 }}
+    >
+      <Paper
+        elevation={8}
+        sx={{
+          p: 4,
+          borderRadius: "24px",
+          background: "#fff",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <QRCodeCanvas value="https://linchuen.github.io/website/" size={200} />
+        <Typography
+          variant="body1"
+          sx={{ mt: 2, color: "#333", wordBreak: "break-word" }}
+        >
+          https://linchuen.github.io/website/
+        </Typography>
+        <Button
+          variant="contained"
+          color="primary"
+          href="https://linchuen.github.io/website/"
+          target="_blank"
+          sx={{ mt: 2, borderRadius: "12px", px: 4 }}
+        >
+          立即前往
+        </Button>
+      </Paper>
+    </motion.div>
   </Box>
 );
 
 export default HomeSlide;
+

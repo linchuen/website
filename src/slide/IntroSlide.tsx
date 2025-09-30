@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Box, Typography, List, ListItem, Grid, Slide } from "@mui/material";
+import { Box, Typography, List, ListItem, Grid, Slide, Link } from "@mui/material";
 
 const IntroSlide: React.FC = () => {
     const [checked, setChecked] = useState(false);
@@ -39,7 +39,7 @@ const IntroSlide: React.FC = () => {
                         <Box sx={{ position: "relative", width: "100%", maxWidth: 400, mx: "auto" }}>
                             <Box
                                 component="img"
-                                src="https://picsum.photos/500/500?random=1"
+                                src={process.env.PUBLIC_URL + "/me.png"}
                                 alt="Profile 1"
                                 sx={{
                                     width: "100%",
@@ -51,15 +51,15 @@ const IntroSlide: React.FC = () => {
                             <Slide direction="up" in={checked} timeout={1200}>
                                 <Box
                                     component="img"
-                                    src="https://picsum.photos/500/500?random=2"
+                                    src={process.env.PUBLIC_URL + "/icon-192.png"}
                                     alt="Profile 2"
                                     sx={{
                                         width: "70%",
-                                        borderRadius: 4,
-                                        boxShadow: 6,
+                                        // borderRadius: 4,
+                                        // boxShadow: 6,
                                         position: "absolute",
-                                        bottom: -70,
-                                        right: -70,
+                                        bottom: -90,
+                                        right: -90,
                                     }}
                                 />
                             </Slide>
@@ -78,15 +78,29 @@ const IntroSlide: React.FC = () => {
                             <List>
                                 <ListItem>
                                     <Typography variant="h5">
-                                        軟體工程師，熟悉 React / Spring Boot / Kafka
+                                        軟體工程師，資管系畢業
                                     </Typography>
                                 </ListItem>
                                 <ListItem>
-                                    <Typography variant="h5">熱愛新技術與開源</Typography>
+                                    <Typography variant="h5">
+                                        曾在台北市政府擔任公務員
+                                    </Typography>
                                 </ListItem>
                                 <ListItem>
                                     <Typography variant="h5">
-                                        持續學習分散式系統與 PWA 開發
+                                        走訪各個讀書會，打造讀書會網站
+                                    </Typography>
+                                </ListItem>
+                                <ListItem>
+                                    <Typography variant="h5">
+                                        <Link
+                                            href="https://cooba2025.com/"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            underline="hover"
+                                        >
+                                            https://cooba2025.com/
+                                        </Link>
                                     </Typography>
                                 </ListItem>
                             </List>

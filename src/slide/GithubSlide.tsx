@@ -50,7 +50,7 @@ const GithubSlide: React.FC = () => (
       {/* 右側圖片 */}
       <Box
         component="img"
-        src="/github.jpg"
+        src={process.env.PUBLIC_URL + "/github.jpg"}
         alt="GitHub Illustration"
         sx={{ width: { xs: "80%", md: "400px" }, borderRadius: 2 }}
       />

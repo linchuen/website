@@ -6,14 +6,13 @@ const IntroSlide: React.FC = () => {
     const ref = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
-        const observer = new IntersectionObserver(async (entries) => {
-            const entry = entries[0];
-            if (entry.isIntersecting) {
-                setChecked(true);
-            } else {
-                setChecked(false);
-            }
-        }, { threshold: 1 });
+        const observer = new IntersectionObserver(
+            (entries) => {
+                const entry = entries[0];
+                setChecked(entry.isIntersecting);
+            },
+            { threshold: 0.5 }
+        );
 
         if (ref.current) observer.observe(ref.current);
         return () => observer.disconnect();
@@ -27,6 +26,8 @@ const IntroSlide: React.FC = () => {
                 minHeight: "100vh",
                 backgroundColor: "#f5f5f5",
                 display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
                 alignItems: "center",
                 px: 4,
             }}
@@ -34,20 +35,20 @@ const IntroSlide: React.FC = () => {
             <Grid container spacing={4} alignItems="center" justifyContent="center">
                 {/* 左邊圖片 */}
                 <Grid item xs={12} md={5}>
-                    {checked && (
-                        <Slide direction="up" in={checked} timeout={1500}>
-                            <Box sx={{ position: "relative", width: "100%", maxWidth: 400, mx: "auto" }}>
-                                <Box
-                                    component="img"
-                                    src="https://picsum.photos/500/500?random=1"
-                                    alt="Profile 1"
-                                    sx={{
-                                        width: "100%",
-                                        borderRadius: 4,
-                                        boxShadow: 3,
-                                        display: "block",
-                                    }}
-                                />
+                    {checked && (<Slide direction="up" in={checked} timeout={1200}>
+                        <Box sx={{ position: "relative", width: "100%", maxWidth: 400, mx: "auto" }}>
+                            <Box
+                                component="img"
+                                src="https://picsum.photos/500/500?random=1"
+                                alt="Profile 1"
+                                sx={{
+                                    width: "100%",
+                                    borderRadius: 4,
+                                    boxShadow: 3,
+                                    display: "block",
+                                }}
+                            />
+                            <Slide direction="up" in={checked} timeout={1200}>
                                 <Box
                                     component="img"
                                     src="https://picsum.photos/500/500?random=2"
@@ -61,14 +62,15 @@ const IntroSlide: React.FC = () => {
                                         right: -70,
                                     }}
                                 />
-                            </Box>
-                        </Slide>
+                            </Slide>
+                        </Box>
+                    </Slide>
                     )}
                 </Grid>
 
                 {/* 右邊文字 */}
                 <Grid item xs={12} md={6}>
-                    <Slide direction="left" in={checked} timeout={1000}>
+                    <Slide direction="left" in={checked} timeout={500}>
                         <Box>
                             <Typography variant="h2" fontWeight="bold" gutterBottom>
                                 自我介紹

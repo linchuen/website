@@ -65,6 +65,7 @@ const VibeSlide: React.FC = () => (
       justifyContent: "center",
       alignItems: "center",
       px: 4,
+      py: { xs: 6, md: 4 },
       textAlign: "center",
     }}
   >

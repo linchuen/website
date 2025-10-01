@@ -18,6 +18,7 @@ const ProcessSlide: React.FC = () => {
         justifyContent: "center",
         alignItems: "center",
         px: 4,
+        py: { xs: 6, md: 4 },
       }}
     >
       <Typography variant="h2" fontWeight="bold" gutterBottom>
@@ -44,8 +45,8 @@ const ProcessSlide: React.FC = () => {
             >
               <Box
                 sx={{
-                  width: 150,
-                  height: 150,
+                  width: { xs: 75, md: 150 },
+                  height: { xs: 75, md: 150 },
                   borderRadius: "50%",
                   backgroundColor: "rgba(255,255,255,0.15)",
                   border: "4px solid #fff",

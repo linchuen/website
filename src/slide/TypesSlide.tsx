@@ -17,11 +17,6 @@ const TypesSlide: React.FC = () => {
     const [secondChecked, setSecondChecked] = useState(false);
     const [thirdChecked, setThirdChecked] = useState(false);
 
-    // 控制點擊展開
-    const [showFirstDetail, setShowFirstDetail] = useState(false);
-    const [showSecondDetail, setShowSecondDetail] = useState(false);
-    const [showThirdDetail, setShowThirdDetail] = useState(false);
-
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
@@ -64,6 +59,7 @@ const TypesSlide: React.FC = () => {
                 justifyContent: "center",
                 alignItems: "center",
                 px: 4,
+                py: { xs: 6, md: 4 },
             }}
         >
             <Typography variant="h2" fontWeight="bold" gutterBottom>
@@ -87,26 +83,22 @@ const TypesSlide: React.FC = () => {
                                 alignItems: "center",
                                 justifyContent: "center"
                             }}
-                            onClick={() => setShowFirstDetail((prev) => !prev)}
+
                         >
                             <CardContent sx={{ width: "100%" }}>
-                                {showFirstDetail && (
-                                    <>
-                                        <Typography variant="h4" fontWeight="bold" gutterBottom align="center">
-                                            前端工程師
-                                        </Typography>
-                                        <Typography variant="h6" align="center" paragraph>
-                                            專注於設計和打造使用者看到的介面，讓操作更直覺、外觀更美觀。
-                                        </Typography>
-                                        <List dense>
-                                            <ListItem>🎨 設計網站或應用程式的外觀</ListItem>
-                                            <ListItem>📱 讓操作流程更簡單好懂</ListItem>
-                                            <ListItem>🖼️ 負責排版與視覺呈現</ListItem>
-                                            <ListItem>⚡ 提升使用上的流暢度</ListItem>
-                                            <ListItem>🤝 與設計師、後端人員合作</ListItem>
-                                        </List>
-                                    </>
-                                )}
+                                <Typography variant="h4" fontWeight="bold" gutterBottom align="center">
+                                    前端工程師
+                                </Typography>
+                                <Typography variant="h6" align="center" paragraph>
+                                    專注於設計和打造使用者看到的介面，讓操作更直覺、外觀更美觀。
+                                </Typography>
+                                <List dense>
+                                    <ListItem>🎨 設計網站或應用程式的外觀</ListItem>
+                                    <ListItem>📱 讓操作流程更簡單好懂</ListItem>
+                                    <ListItem>🖼️ 負責排版與視覺呈現</ListItem>
+                                    <ListItem>⚡ 提升使用上的流暢度</ListItem>
+                                    <ListItem>🤝 與設計師、後端人員合作</ListItem>
+                                </List>
                             </CardContent>
                         </Card>
                     </Slide>
@@ -128,26 +120,24 @@ const TypesSlide: React.FC = () => {
                                 alignItems: "center",
                                 justifyContent: "center"
                             }}
-                            onClick={() => setShowSecondDetail((prev) => !prev)}
+
                         >
                             <CardContent sx={{ width: "100%" }}>
-                                {showSecondDetail && (
-                                    <>
-                                        <Typography variant="h4" fontWeight="bold" gutterBottom align="center">
-                                            後端工程師
-                                        </Typography>
-                                        <Typography variant="h6" align="center" paragraph>
-                                            負責處理幕後邏輯，確保資料正確、安全，並讓系統能穩定運作。
-                                        </Typography>
-                                        <List dense>
-                                            <ListItem>🛠️ 設計與規劃系統架構</ListItem>
-                                            <ListItem>📂 管理與儲存使用者資料</ListItem>
-                                            <ListItem>🔌 提供前端能使用的資料服務</ListItem>
-                                            <ListItem>⚡ 提升系統速度與效能</ListItem>
-                                            <ListItem>🔐 保護資料安全與隱私</ListItem>
-                                        </List>
-                                    </>
-                                )}
+
+                                <Typography variant="h4" fontWeight="bold" gutterBottom align="center">
+                                    後端工程師
+                                </Typography>
+                                <Typography variant="h6" align="center" paragraph>
+                                    負責處理幕後邏輯，確保資料正確、安全，並讓系統能穩定運作。
+                                </Typography>
+                                <List dense>
+                                    <ListItem>🛠️ 設計與規劃系統架構</ListItem>
+                                    <ListItem>📂 管理與儲存使用者資料</ListItem>
+                                    <ListItem>🔌 提供前端能使用的資料服務</ListItem>
+                                    <ListItem>⚡ 提升系統速度與效能</ListItem>
+                                    <ListItem>🔐 保護資料安全與隱私</ListItem>
+                                </List>
+
                             </CardContent>
                         </Card>
                     </Slide>
@@ -169,26 +159,21 @@ const TypesSlide: React.FC = () => {
                                 alignItems: "center",
                                 justifyContent: "center"
                             }}
-                            onClick={() => setShowThirdDetail((prev) => !prev)}
                         >
                             <CardContent sx={{ width: "100%" }}>
-                                {showThirdDetail && (
-                                    <>
-                                        <Typography variant="h4" fontWeight="bold" gutterBottom align="center">
-                                            DevOps / 全端
-                                        </Typography>
-                                        <Typography variant="h6" align="center" paragraph>
-                                            橫跨前端與後端，同時關注系統維護、更新，確保服務穩定且能快速推出新功能。
-                                        </Typography>
-                                        <List dense>
-                                            <ListItem>☁️ 管理伺服器與環境設定</ListItem>
-                                            <ListItem>🔄 自動化更新與版本發布</ListItem>
-                                            <ListItem>📊 監控系統狀態並排除問題</ListItem>
-                                            <ListItem>💻 處理日常系統維護與更新</ListItem>
-                                            <ListItem>⚡ 確保系統穩定與快速反應</ListItem>
-                                        </List>
-                                    </>
-                                )}
+                                <Typography variant="h4" fontWeight="bold" gutterBottom align="center">
+                                    DevOps / 全端
+                                </Typography>
+                                <Typography variant="h6" align="center" paragraph>
+                                    橫跨前端與後端，同時關注系統維護、更新，確保服務穩定且能快速推出新功能。
+                                </Typography>
+                                <List dense>
+                                    <ListItem>☁️ 管理伺服器與環境設定</ListItem>
+                                    <ListItem>🔄 自動化更新與版本發布</ListItem>
+                                    <ListItem>📊 監控系統狀態並排除問題</ListItem>
+                                    <ListItem>💻 處理日常系統維護與更新</ListItem>
+                                    <ListItem>⚡ 確保系統穩定與快速反應</ListItem>
+                                </List>
                             </CardContent>
                         </Card>
                     </Slide>

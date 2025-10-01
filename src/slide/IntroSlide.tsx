@@ -30,6 +30,7 @@ const IntroSlide: React.FC = () => {
                 justifyContent: "center",
                 alignItems: "center",
                 px: 4,
+                py: { xs: 6, md: 4 },
             }}
         >
             <Grid container spacing={4} alignItems="center" justifyContent="center">

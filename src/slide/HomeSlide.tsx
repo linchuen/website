@@ -15,6 +15,7 @@ const HomeSlide: React.FC = () => (
       justifyContent: "center",
       alignItems: "center",
       px: 4,
+      py: { xs: 6, md: 4 },
       textAlign: "center",
     }}
   >
@@ -24,7 +25,7 @@ const HomeSlide: React.FC = () => (
       transition={{ duration: 0.8 }}
     >
       <Typography
-        variant="h1"
+        variant="h2"
         fontWeight="bold"
         gutterBottom
         sx={{ textShadow: "2px 2px 6px rgba(0,0,0,0.4)" }}

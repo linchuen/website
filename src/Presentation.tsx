@@ -9,6 +9,7 @@ import ProcessSlide from "./slide/ProcessSlide";
 import TypesSlide from "./slide/TypesSlide";
 import VibeSlide from "./slide/VibeSlide";
 import GithubSlide from "./slide/GithubSlide";
+import QAQSlide from "./slide/QAQSlide";
 
 const Presentation: React.FC = () => {
     const sections = [
@@ -19,6 +20,7 @@ const Presentation: React.FC = () => {
         { id: "myth", title: "人月神話" },
         { id: "vibe", title: "Vibe Coding" },
         { id: "github", title: "GitHub Page" },
+        { id: "qa", title: "Q&A" },
     ];
 
     // 滾動到指定 section
@@ -84,6 +86,7 @@ const Presentation: React.FC = () => {
             <MythSlide />
             <VibeSlide />
             <GithubSlide />
+            <QAQSlide />
 
             {/* 右下角上下浮動按鈕 */}
             <Box

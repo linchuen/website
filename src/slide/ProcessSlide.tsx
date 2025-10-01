@@ -3,7 +3,28 @@ import { Box, Typography } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { motion } from "framer-motion";
 
-const steps = ["規劃", "設計", "開發", "測試", "部屬"];
+const steps = [
+  {
+    title: "規劃",
+    desc: "先確認網站要達成的目標、主要功能和使用者需求，並安排好專案的時間與資源。",
+  },
+  {
+    title: "設計",
+    desc: "把網站的版面、色彩、文字和操作流程規劃好，讓使用者看起來清楚、操作順暢。",
+  },
+  {
+    title: "開發",
+    desc: "由工程師把設計變成真正可以使用的網站，包括前端畫面和後端運作。",
+  },
+  {
+    title: "測試",
+    desc: "確認網站的功能正常、速度快、在不同裝置和瀏覽器上都能順利使用，並收集使用者回饋做調整。",
+  },
+  {
+    title: "部屬",
+    desc: "把網站正式上線，讓大家可以訪問，同時設定維護和安全措施，確保網站穩定運作。",
+  },
+];
 
 const ProcessSlide: React.FC = () => {
   return (
@@ -36,11 +57,11 @@ const ProcessSlide: React.FC = () => {
         }}
       >
         {steps.map((step, index) => (
-          <React.Fragment key={step}>
+          <React.Fragment key={step.title}>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.2 }} // 當 20% 元素進入畫面時觸發
+              viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.8, delay: index * 0.4 }}
             >
               <Box
@@ -55,11 +76,42 @@ const ProcessSlide: React.FC = () => {
                   alignItems: "center",
                   textAlign: "center",
                   p: 2,
+                  position: "relative",
+                  cursor: "pointer",
+                  "&:hover .tooltip": {
+                    opacity: 1,
+                    visibility: "visible",
+                    transform: "translateY(-10px)",
+                  },
                 }}
               >
                 <Typography variant="h6" fontWeight="bold">
-                  {step}
+                  {step.title}
                 </Typography>
+
+                {/* Tooltip */}
+                <Box
+                  className="tooltip"
+                  sx={{
+                    position: "absolute",
+                    bottom: "110%",
+                    left: "50%",
+                    transform: "translateX(-50%) translateY(0)",
+                    bgcolor: "rgba(156, 39, 176, 0.85)", // 半透明紫色
+                    color: "#fff",
+                    p: 2,
+                    borderRadius: 2,
+                    width: { xs: 150, md: 250 },
+                    textAlign: "center",
+                    boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
+                    opacity: 0,
+                    visibility: "hidden",
+                    transition: "all 0.3s ease",
+                    zIndex: 10,
+                  }}
+                >
+                  {step.desc}
+                </Box>
               </Box>
             </motion.div>
 

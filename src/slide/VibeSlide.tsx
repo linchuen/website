@@ -86,7 +86,7 @@ const VibeSlide: React.FC = () => (
         backgroundColor: "#f4e1d2",
         color: "#3c2f2f",
         fontFamily: "monospace",
-        fontSize: "1rem",
+        fontSize: { xs: "0.6rem", md: "1rem" },
         borderRadius: 4,
         p: 3,
         maxWidth: 800,

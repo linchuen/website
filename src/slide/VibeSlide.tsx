@@ -9,6 +9,8 @@ const TypingText: React.FC<{ text: string; speed?: number }> = ({ text, speed = 
 
   // IntersectionObserver 監測進場/離場
   useEffect(() => {
+    if (!ref.current) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -23,11 +25,10 @@ const TypingText: React.FC<{ text: string; speed?: number }> = ({ text, speed = 
       { threshold: 0.5 }
     );
 
-    if (ref.current) observer.observe(ref.current);
+    const current = ref.current;
+    observer.observe(current);
 
-    return () => {
-      if (ref.current) observer.unobserve(ref.current);
-    };
+    return () => observer.unobserve(current);
   }, []);
 
   // 打字機效果
@@ -38,7 +39,7 @@ const TypingText: React.FC<{ text: string; speed?: number }> = ({ text, speed = 
     const interval = setInterval(() => {
       setDisplayedText(text.slice(0, index + 1));
       index++;
-      if (index === text.length) clearInterval(interval);
+      if (index >= text.length) clearInterval(interval);
     }, speed);
 
     return () => clearInterval(interval);
@@ -78,10 +79,8 @@ const VibeSlide: React.FC = () => (
       Vibe Coding
     </Typography>
 
-    {/* 打字機文字效果 */}
     <TypingText text="用自然語言與 AI 協作，像寫程式一樣把想法變成代碼" speed={50} />
 
-    {/* Markdown 風格程式碼區塊 */}
     <Box
       sx={{
         backgroundColor: "#f4e1d2",
@@ -98,9 +97,31 @@ const VibeSlide: React.FC = () => (
         borderLeft: "4px solid #d4a373",
       }}
     >
-      {`// Vibe Coding 精髓示範
-let idea = "建立一個聊天機器人";
-ai.generateCode(idea);`}
+      {`// 產生 1~20 的隨機數字
+let secretNumber = Math.floor(Math.random() * 20) + 1;
+let attempts = 0;
+
+console.log("猜數字遊戲開始！範圍是 1~20。");
+console.log("在 Console 輸入 guess(數字) 來猜。");
+
+// 定義 guess 函式
+function guess(number) {
+  attempts++;
+
+  if (number < 1 || number > 20) {
+    console.log("請輸入 1 到 20 的數字！");
+    return;
+  }
+
+  if (number < secretNumber) {
+    console.log("太小了，再試一次！");
+  } else if (number > secretNumber) {
+    console.log("太大了，再試一次！");
+  } else {
+    console.log(\`恭喜你！答對了，數字就是 \${secretNumber}。\`);
+    console.log(\`你總共猜了 \${attempts} 次。\`);
+  }
+}`}
     </Box>
   </Box>
 );

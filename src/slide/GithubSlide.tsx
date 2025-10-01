@@ -20,7 +20,7 @@ const GithubSlide: React.FC = () => (
     <GitHub sx={{ fontSize: 80, mb: 2, color: "#f0f6fc" }} />
 
     <Typography variant="h2" fontWeight="bold" gutterBottom>
-      GitHub Page
+      GitHub Pages
     </Typography>
 
     {/* 左右排列 List 和圖片 */}
@@ -31,7 +31,7 @@ const GithubSlide: React.FC = () => (
           <List>
             <ListItem>
               <Typography variant="h5">
-                使用 GitHub Actions 自動部署 React 專案
+                GitHub提供的免費服務用於託管和發佈靜態網站
               </Typography>
             </ListItem>
             <ListItem>
@@ -40,7 +40,9 @@ const GithubSlide: React.FC = () => (
               </Typography>
             </ListItem>
             <ListItem>
-              <Typography variant="h5">免費、穩定、維護方便</Typography>
+              <Typography variant="h5">
+                免費、穩定、維護方便
+              </Typography>
             </ListItem>
           </List>
         </Grid>

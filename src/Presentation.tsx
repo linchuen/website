@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar, Toolbar, Link, CssBaseline, Fab, Box } from "@mui/material";
+import { AppBar, Toolbar, Link, CssBaseline, Fab, Box, useMediaQuery, useTheme } from "@mui/material";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import HomeSlide from "./slide/HomeSlide";
@@ -12,6 +12,9 @@ import GithubSlide from "./slide/GithubSlide";
 import QAQSlide from "./slide/QAQSlide";
 
 const Presentation: React.FC = () => {
+    const theme = useTheme();
+    const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
+
     const sections = [
         { id: "home", title: "首頁" },
         { id: "intro", title: "自我介紹" },
@@ -51,62 +54,69 @@ const Presentation: React.FC = () => {
     return (
         <>
             <CssBaseline />
-            <AppBar
-                position="fixed"
-                color="default"
-                sx={{
-                    backgroundColor: "#ffffffcc",
-                    opacity: 0,                          // 預設隱藏
-                    transition: "opacity 0.3s ease",     // 平滑過渡
-                    "&:hover": {
-                        opacity: 1,                        // 滑鼠移入顯示
-                    },
-                }}
-            >
-                <Toolbar sx={{ justifyContent: "center", gap: 3 }}>
-                    {sections.map((s) => (
-                        <Link
-                            key={s.id}
-                            href={`#${s.id}`}
-                            underline="none"
-                            color="inherit"
-                            sx={{ fontWeight: "bold", "&:hover": { color: "#1976d2" } }}
-                        >
-                            {s.title}
-                        </Link>
-                    ))}
-                </Toolbar>
-            </AppBar>
+            {isDesktop && (
+                <AppBar
+                    position="fixed"
+                    color="default"
+                    sx={{
+                        backgroundColor: "#ffffffcc",
+                        opacity: 0,                          // 預設隱藏
+                        transition: "opacity 0.3s ease",     // 平滑過渡
+                        "&:hover": {
+                            opacity: 1,                        // 滑鼠移入顯示
+                        },
+                    }}
+                >
+                    <Toolbar sx={{ justifyContent: "center", gap: 3 }}>
+                        {sections.map((s) => (
+                            <Link
+                                key={s.id}
+                                href={`#${s.id}`}
+                                underline="none"
+                                color="inherit"
+                                sx={{ fontWeight: "bold", "&:hover": { color: "#1976d2" } }}
+                            >
+                                {s.title}
+                            </Link>
+                        ))}
+                    </Toolbar>
+                </AppBar>
+            )}
 
-            {/* 投影片依序渲染，請確保每個 Slide 最外層都有對應 id */}
-            <HomeSlide />
-            <IntroSlide />
-            <TypesSlide />
-            <ProcessSlide />
-            <MythSlide />
-            <VibeSlide />
-            <GithubSlide />
-            <QAQSlide />
+
+            {/* Slide 容器，加上 overflow-x hidden 防止手機水平滑動 */}
+            <Box sx={{ width: "100%", overflowX: "hidden" }}>
+                <HomeSlide />
+                <IntroSlide />
+                <TypesSlide />
+                <ProcessSlide />
+                <MythSlide />
+                <VibeSlide />
+                <GithubSlide />
+                <QAQSlide />
+            </Box>
 
             {/* 右下角上下浮動按鈕 */}
-            <Box
-                sx={{
-                    position: "fixed",
-                    bottom: 24,
-                    right: 24,
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: 2,
-                    zIndex: 1300,
-                }}
-            >
-                <Fab color="primary" size="small" onClick={handlePrev}>
-                    <ArrowUpwardIcon />
-                </Fab>
-                <Fab color="primary" size="small" onClick={handleNext}>
-                    <ArrowDownwardIcon />
-                </Fab>
-            </Box>
+            {isDesktop && (
+                <Box
+                    sx={{
+                        position: "fixed",
+                        bottom: 24,
+                        right: 24,
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: 2,
+                        zIndex: 1300,
+                    }}
+                >
+                    <Fab color="primary" size="small" onClick={handlePrev}>
+                        <ArrowUpwardIcon />
+                    </Fab>
+                    <Fab color="primary" size="small" onClick={handleNext}>
+                        <ArrowDownwardIcon />
+                    </Fab>
+                </Box>
+            )}
         </>
     );
 };

@@ -55,12 +55,10 @@ const IntroSlide: React.FC = () => {
                                     src={process.env.PUBLIC_URL + "/icon-192.png"}
                                     alt="Profile 2"
                                     sx={{
-                                        width: "70%",
-                                        // borderRadius: 4,
-                                        // boxShadow: 6,
+                                        width: { xs: "50%", md: "70%" },
                                         position: "absolute",
-                                        bottom: -90,
-                                        right: -90,
+                                        bottom: { xs: -40, md: -90 },
+                                        right: { xs: -40, md: -90 },
                                     }}
                                 />
                             </Slide>

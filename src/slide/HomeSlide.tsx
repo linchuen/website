@@ -30,7 +30,7 @@ const HomeSlide: React.FC = () => (
         gutterBottom
         sx={{ textShadow: "2px 2px 6px rgba(0,0,0,0.4)" }}
       >
-        網站架設介紹
+        我獨自闖關的網站架設
       </Typography>
     </motion.div>
 

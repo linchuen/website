@@ -74,15 +74,6 @@ const HomeSlide: React.FC = () => (
         >
           https://linchuen.github.io/website/
         </Typography>
-        <Button
-          variant="contained"
-          color="primary"
-          href="https://linchuen.github.io/website/"
-          target="_blank"
-          sx={{ mt: 2, borderRadius: "12px", px: 4 }}
-        >
-          立即前往
-        </Button>
       </Paper>
     </motion.div>
   </Box>

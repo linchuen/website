@@ -78,7 +78,7 @@ const TypesSlide: React.FC = () => {
                                 boxShadow: 6,
                                 p: 3,
                                 cursor: "pointer",
-                                height: 600,
+                                height: 700,
                                 display: "flex",
                                 alignItems: "center",
                                 justifyContent: "center"
@@ -92,13 +92,19 @@ const TypesSlide: React.FC = () => {
                                 <Typography variant="h6" align="center" paragraph>
                                     專注於設計和打造使用者看到的介面，讓操作更直覺、外觀更美觀。
                                 </Typography>
-                                <List dense>
-                                    <ListItem>🎨 設計網站或應用程式的外觀</ListItem>
-                                    <ListItem>📱 讓操作流程更簡單好懂</ListItem>
-                                    <ListItem>🖼️ 負責排版與視覺呈現</ListItem>
-                                    <ListItem>⚡ 提升使用上的流暢度</ListItem>
-                                    <ListItem>🤝 與設計師、後端人員合作</ListItem>
-                                </List>
+                                <Box
+                                    component="img"
+                                    src={process.env.PUBLIC_URL + "/frontend.png" }
+                                    alt="前端工程師示意圖"
+                                    sx={{
+                                        display: "block",
+                                        mx: "auto",
+                                        width: "80%", // 可調整大小
+                                        maxWidth: 400,
+                                        borderRadius: 3,
+                                        boxShadow: 3,
+                                    }}
+                                />
                             </CardContent>
                         </Card>
                     </Slide>
@@ -115,7 +121,7 @@ const TypesSlide: React.FC = () => {
                                 boxShadow: 6,
                                 p: 3,
                                 cursor: "pointer",
-                                height: 600,
+                                height: 700,
                                 display: "flex",
                                 alignItems: "center",
                                 justifyContent: "center"
@@ -130,13 +136,19 @@ const TypesSlide: React.FC = () => {
                                 <Typography variant="h6" align="center" paragraph>
                                     負責處理幕後邏輯，確保資料正確、安全，並讓系統能穩定運作。
                                 </Typography>
-                                <List dense>
-                                    <ListItem>🛠️ 設計與規劃系統架構</ListItem>
-                                    <ListItem>📂 管理與儲存使用者資料</ListItem>
-                                    <ListItem>🔌 提供前端能使用的資料服務</ListItem>
-                                    <ListItem>⚡ 提升系統速度與效能</ListItem>
-                                    <ListItem>🔐 保護資料安全與隱私</ListItem>
-                                </List>
+                                <Box
+                                    component="img"
+                                    src={process.env.PUBLIC_URL + "/backend.png" }
+                                    alt="前端工程師示意圖"
+                                    sx={{
+                                        display: "block",
+                                        mx: "auto",
+                                        width: "80%", // 可調整大小
+                                        maxWidth: 400,
+                                        borderRadius: 3,
+                                        boxShadow: 3,
+                                    }}
+                                />
 
                             </CardContent>
                         </Card>
@@ -154,26 +166,37 @@ const TypesSlide: React.FC = () => {
                                 boxShadow: 6,
                                 p: 3,
                                 cursor: "pointer",
-                                height: 600,
+                                height: 700,
                                 display: "flex",
                                 alignItems: "center",
                                 justifyContent: "center"
                             }}
                         >
                             <CardContent sx={{ width: "100%" }}>
-                                <Typography variant="h4" fontWeight="bold" gutterBottom align="center">
-                                    DevOps / 全端
+                                <Typography
+                                    variant="h4"
+                                    fontWeight="bold"
+                                    gutterBottom
+                                    align="center"
+                                >
+                                    DevOps
                                 </Typography>
                                 <Typography variant="h6" align="center" paragraph>
-                                    橫跨前端與後端，同時關注系統維護、更新，確保服務穩定且能快速推出新功能。
+                                    專注於系統維護、自動化與穩定部署，確保服務穩定且能快速推出新功能。
                                 </Typography>
-                                <List dense>
-                                    <ListItem>☁️ 管理伺服器與環境設定</ListItem>
-                                    <ListItem>🔄 自動化更新與版本發布</ListItem>
-                                    <ListItem>📊 監控系統狀態並排除問題</ListItem>
-                                    <ListItem>💻 處理日常系統維護與更新</ListItem>
-                                    <ListItem>⚡ 確保系統穩定與快速反應</ListItem>
-                                </List>
+                                <Box
+                                    component="img"
+                                    src={process.env.PUBLIC_URL + "/devops.png" }
+                                    alt="前端工程師示意圖"
+                                    sx={{
+                                        display: "block",
+                                        mx: "auto",
+                                        width: "80%", // 可調整大小
+                                        maxWidth: 400,
+                                        borderRadius: 3,
+                                        boxShadow: 3,
+                                    }}
+                                />
                             </CardContent>
                         </Card>
                     </Slide>

@@ -37,7 +37,7 @@ const IntroSlide: React.FC = () => {
                 {/* 左邊圖片 */}
                 <Grid item xs={12} md={5}>
                     {checked && (<Slide direction="up" in={checked} timeout={1200}>
-                        <Box sx={{ position: "relative", width: "100%", maxWidth: 400, mx: "auto" }}>
+                        <Box sx={{ position: "relative", width: "100%", maxWidth: 500, mx: "auto" }}>
                             <Box
                                 component="img"
                                 src={process.env.PUBLIC_URL + "/me.png"}

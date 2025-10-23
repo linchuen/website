@@ -3,16 +3,46 @@ import { createTheme } from '@mui/material';
 import './App.css';
 import Presentation from './Presentation';
 
-const theme = createTheme({
+let theme = createTheme(); // 先建立基礎主題
+theme = createTheme(theme, {
   typography: {
     h2: {
       fontWeight: "bold",
-      fontSize: "2.25rem", // 手機 (xs)
-      "@media (min-width:600px)": {
-        fontSize: "3rem", // 平板 (sm)
+      fontSize: "2.25rem",
+      [theme.breakpoints.up("sm")]: {
+        fontSize: "3rem",
       },
-      "@media (min-width:900px)": {
-        fontSize: "4rem", // 桌面 (md)
+      [theme.breakpoints.up("md")]: {
+        fontSize: "4rem",
+      },
+      [theme.breakpoints.up("xl")]: {
+        fontSize: "5.5rem",
+      },
+    },
+    h4: {
+      [theme.breakpoints.up("xl")]: {
+        fontSize: "3.5rem",
+      },
+    },
+    h5: {
+      [theme.breakpoints.up("xl")]: {
+        fontSize: "3rem",
+      },
+    },
+    h6: {
+      [theme.breakpoints.up("xl")]: {
+        fontSize: "2rem",
+      },
+    },
+    body1: {
+      [theme.breakpoints.up("sm")]: {
+        fontSize: "1rem",
+      },
+      [theme.breakpoints.up("md")]: {
+        fontSize: "1.2rem",
+      },
+      [theme.breakpoints.up("xl")]: {
+        fontSize: "1.5rem",
       },
     },
   },

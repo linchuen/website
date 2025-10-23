@@ -24,12 +24,7 @@ const HomeSlide: React.FC = () => (
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
     >
-      <Typography
-        variant="h2"
-        fontWeight="bold"
-        gutterBottom
-        sx={{ textShadow: "2px 2px 6px rgba(0,0,0,0.4)" }}
-      >
+     <Typography variant="h2" gutterBottom>
         我獨自闖關的網站架設
       </Typography>
     </motion.div>
@@ -67,7 +62,7 @@ const HomeSlide: React.FC = () => (
           alignItems: "center",
         }}
       >
-        <QRCodeCanvas value="https://linchuen.github.io/website/" size={200} />
+        <QRCodeCanvas value="https://linchuen.github.io/website/" size={350} />
         <Typography
           variant="body1"
           sx={{ mt: 2, color: "#333", wordBreak: "break-word" }}

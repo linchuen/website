@@ -41,7 +41,7 @@ const QAQSlide: React.FC = () => (
     >
       <QRCodeCanvas
         value="https://www.surveycake.com/s/AGmLO"
-        size={200}
+        size={300}
         bgColor="#ffffff"
         fgColor="#d81b60" // QRCode 顏色與圖示顏色呼應
         level="H"

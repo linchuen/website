@@ -47,7 +47,7 @@ const TypingText: React.FC<{ text: string; speed?: number }> = ({ text, speed = 
 
   return (
     <Box ref={ref}>
-      <Typography variant="h5" gutterBottom sx={{ maxWidth: 800, mb: 4 }}>
+      <Typography variant="h6" gutterBottom sx={{ maxWidth: 800, mb: 4 }}>
         {displayedText}
       </Typography>
     </Box>
@@ -79,7 +79,7 @@ const VibeSlide: React.FC = () => (
       Vibe Coding
     </Typography>
 
-    <TypingText text="用自然語言與 AI 協作，像寫程式一樣把想法變成代碼" speed={50} />
+    <TypingText text="用自然語言與 AI 協作，把想法變成代碼" speed={50} />
 
     <Box
       sx={{

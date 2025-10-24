@@ -31,7 +31,7 @@ theme = createTheme(theme, {
     },
     h6: {
       [theme.breakpoints.up("xl")]: {
-        fontSize: "2.5rem",
+        fontSize: "2.2rem",
       },
     },
     body1: {

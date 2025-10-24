@@ -182,7 +182,7 @@ const TypesSlide: React.FC = () => {
                                     DevOps
                                 </Typography>
                                 <Typography variant="h6" align="center" paragraph>
-                                    專注於系統維護、自動化與穩定部署，確保服務穩定且能快速推出新功能。
+                                    致力於系統可靠性、自動化部署與持續整合，確保服務穩定運行。
                                 </Typography>
                                 <Box
                                     component="img"
